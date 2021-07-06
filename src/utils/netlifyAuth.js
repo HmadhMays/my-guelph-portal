@@ -19,7 +19,7 @@ export const currentUser = () => {
   return netlifyIdentity.currentUser().email;
 };
 
-const netlifyAuth = {
+export const netlifyAuth = {
   isAuthenticated: false,
   user: null,
   initialize(callback) {
@@ -58,21 +58,17 @@ export const AuthButton = withRouter(({ history }) =>
         netlifyAuth.signout(() => history.push("/"));
       }}
     >
-      <FaSignOutAlt
-        style={{ padding: "5px 5px 0 0", top: "2px", position: "relative" }}
-      />
+      <FaSignOutAlt style={{ padding: "0 0.5em 0 0", position: "relative" }} />
       Sign out
     </button>
   ) : (
     <button
       className="a-btn--filled"
       onClick={() => {
-        netlifyAuth.authenticate();
+        netlifyAuth.authenticate(() => history.push("/"));
       }}
     >
-      <FaSignInAlt
-        style={{ padding: "5px 5px 0 0", top: "2px", position: "relative" }}
-      />
+      <FaSignInAlt style={{ padding: "0 0.5em 0 0", position: "relative" }} />
       Sign in
     </button>
   )

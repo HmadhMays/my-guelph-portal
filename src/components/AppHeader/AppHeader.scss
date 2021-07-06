@@ -1,0 +1,93 @@
+nav{
+    padding: 1em;
+    background: var(--color-primary-dark);
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+
+    .backToGuelphCA{
+        font-size: large;
+        color: white;
+        text-decoration: none;
+    }
+
+    .rightBox{
+        display: flex;
+        font-size: large;
+        align-items: center;
+
+        .react-icon{
+            padding: 0 0.3em 0 0;
+            top: -2px;
+            position: relative;
+        }
+
+        .contact-us{
+            margin-right:2em;
+            color: white;
+            text-decoration: none;
+        }
+
+        p{
+            margin:0;
+        }
+
+        .nav-btn-wrapper{
+            font-size: 80%;
+            display: flex;
+            align-items: center;
+            padding-left: 2em;
+        }
+    }
+}
+
+.bannerBox{
+    position: relative;
+    background: var(--color-primary);
+    height: 174px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 0;
+    margin-left: 0;
+
+    .bannerWrap{
+        color: #fff;
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: space-between;
+        align-items: center;
+
+        .title{
+            font-size: 45px;
+            margin-left: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            #site-logo{
+                height: 90px;
+                padding-right:1em
+            }
+
+            .line-divider {
+                border-left: 2px solid var(--color-background);
+                height: 125px;
+                top: 25px;
+                // position: absolute;
+            }
+
+            .logo-text {
+                font-size: 45px !important;
+                display: inline;
+                margin-left: 1em;
+                font-weight: 400;
+            }
+        }
+
+
+    }
+}

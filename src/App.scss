@@ -1,0 +1,126 @@
+*,
+::after,
+::before {
+  box-sizing: initial;
+}
+
+.App {
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  background: var(--color-background);
+}
+
+main{
+  height: 100%;
+  width: 100%;
+}
+
+.landing{
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(rgba(0, 165, 225, 0.1), rgba(0, 165, 225, 0.8)) no-repeat center center fixed;
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+
+button {
+  padding: 7px 15px;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  border: 1px solid #e9ebeb;
+  border-bottom: 1px solid #e1e3e3;
+  border-radius: 4px;
+  background-color: #fff;
+  color: rgba(14, 30, 37, .87);
+  box-shadow: 0 2px 4px 0 rgba(14, 30, 37, .12);
+  transition: all .2s ease;
+  transition-property: background-color, color, border, box-shadow;
+  outline: 0;
+  cursor: pointer;
+  margin-bottom: 3px;
+}
+
+button:focus,
+button:hover {
+  background-color: #f5f5f5;
+  color: rgba(14, 30, 37, .87);
+  box-shadow: 0 8px 12px 0 rgba(233, 235, 235, .16), 0 2px 8px 0 rgba(0, 0, 0, .08);
+  text-decoration: none;
+}
+
+.a-btn,
+.a-btn--filled {
+  padding: .35em 1em;
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  border: 1px solid #3498db;
+  background-color: #fff;
+  transition: all 146ms ease;
+  color: #3498db;
+  font-size: 1em;
+  border-radius: 5px;
+}
+
+.a-btn:enabled:hover,
+.a-btn--filled:enabled:hover,
+.a-btn:focus,
+.a-btn--filled:focus {
+  background-color: #3498db;
+  color: #fff;
+  box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.3);
+}
+
+.a-btn--filled {
+  background-color: #3498db;
+  border-color: #3498db;
+  color: #fff;
+}
+
+.a-btn--filled:enabled:hover {
+  background-color: #2980b9;
+  border-color: #2980b9;
+}
+
+.a-btn-red {
+  background-color: #f44336;
+  border-color: #f44336;
+  color: #fff;
+}
+
+.a-btn-red:enabled:hover,
+.a-btn-red:focus {
+  background-color: #c9392e;
+  border-color: #c9392e;
+}
+
+.a-btn:disabled,
+.a-btn--filled:disabled {
+  background-color: #ecf0f1;
+  border-color: #bdc3c7;
+  color: #6a6a6a;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
