@@ -14,7 +14,7 @@ export default class Dashboard extends React.Component<Props, State> {
 
   async componentDidMount() {
     const feed = await parser.parseURL("https://www.reddit.com/.rss");
-    // console.log(feed);
+    console.log(feed);
     this.setState({ feed });
   }
 
