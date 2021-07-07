@@ -1,3 +1,5 @@
+
+
 .widget-grid{
     padding-top: 2.25rem;
     padding-right: 15px;
@@ -7,21 +9,32 @@
     position: relative;
     width: auto;
 
+    a {
+        color: #006db6;
+        text-decoration: none;
+        font-family: 'Lato', sans-serif;
+        font-size: 16px;
+
+
+    }
 }
 
-.widget-card{
-    border-radius: 5px !important;
-    min-height: 260px;
-    height: 100% !important;
-    background: #ffffff 0% 0% no-repeat padding-box;
-    border-radius: 5px;
-    text-align: left;
-    border: 0;
-    margin: 0;
-    box-shadow: 8px 8px 8px #0000000d;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
+.listingborder{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    margin-bottom: 1rem;
+    justify-items: left;
+    font-size: 15px;
+    padding-bottom: 1rem;
 }
+
+.loading-icon{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    margin-top: 2em;
+
+    .MuiCircularProgress-svg {
+        color: var(--color-primary)
+    }
+}
+
