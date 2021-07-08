@@ -15,7 +15,7 @@ import Footer from "./../Footer";
 
 
 let parser = new Parser();
-const guelphURL = "https://guelph.ca";
+const guelphURL = "/proxy/https://guelph.ca";
 
 var now = new Date();
 var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
@@ -30,7 +30,7 @@ export default class Dashboard extends React.Component<Props, State> {
   }
 
   async componentDidMount() {
-    const eventsfeed = await parser.parseURL("https://devguelphca.wpengine.com/events/feed/");
+    const eventsfeed = await parser.parseURL("/proxy/https://devguelphca.wpengine.com/events/feed/");
     this.setState({ eventsfeed });
 
     const newsfeed = await parser.parseURL(guelphURL + "/feed/?newstype=news-release");
