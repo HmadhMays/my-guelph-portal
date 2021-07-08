@@ -1,4 +1,20 @@
 
+.welcomeMessage {
+    display: inline-block;
+    margin-top: 1.5em;
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #3b3b3b;
+
+    .weatherMessage {
+        display: inline-block;
+        margin-left: 1em;
+        padding-left: 1em;
+        border-left: 1px solid #3b3b3b;
+        padding-right: calc(45px);
+    }
+}
 
 .widget-grid{
     padding-top: 2.25rem;
