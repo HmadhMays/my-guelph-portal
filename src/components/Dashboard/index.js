@@ -10,6 +10,8 @@ import { GoMegaphone } from "react-icons/go";
 
 import ColouredCard from "./../ColouredCard";
 
+import Footer from "./../Footer";
+
 
 let parser = new Parser();
 
@@ -297,6 +299,7 @@ export default class Dashboard extends React.Component<Props, State> {
             </p>
           </ColouredCard>
         </div>
+        <Footer/>
       </>
     );
   }
