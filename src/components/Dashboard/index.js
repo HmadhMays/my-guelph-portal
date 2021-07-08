@@ -342,12 +342,12 @@ export default class Dashboard extends React.Component<Props, State> {
             icon={<FaRegQuestionCircle />}
           >
             <p>
-              If you have technical questions about MyGuelph, please email
+              If you have technical questions about MyGuelph, please email&nbsp;
               <a href="mailto:myguelph@guelph.ca">myguelph@guelph.ca</a>.
             </p>
             <p>
               For all other city-related questions, please call the the City of
-              Guelph at 519-826-9771 or email
+              Guelph at 519-826-9771 or email&nbsp;
               <a href="mailto:info@guelph.ca">info@guelph.ca</a>.
             </p>
           </ColouredCard>
