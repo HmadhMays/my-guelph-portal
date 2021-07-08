@@ -53,20 +53,19 @@ export default class Dashboard extends React.Component<Props, State> {
             <div className="alignLeft">
               <p>
                 Swimming lesson registration for outdoor pools is now open.{" "}
-                <a href=""> Register early </a>
+                <a href="/"> Register early </a>
                 before spots fill!
               </p>
               <p>
                 <a
                   title="Open new window to view pools webpage"
-                  href="https://www.kitchener.ca/en/pools-and-swimming/pools.aspx"
+                  href="https://guelph.ca/seasonal/outdoor-pools-splash-pads/"
                 >
                   Outdoor pools
-                </a>
-                are open.
+                </a> are open.
               </p>
               <p>
-                <a href="">View all programs and activities</a>
+                <a href="/">View all programs and activities</a>
               </p>
             </div>
           </ColouredCard>
@@ -275,8 +274,8 @@ export default class Dashboard extends React.Component<Props, State> {
             </p>
             <p>
               On-street parking is restricted from December 1 to April 1 to
-              allow for snow removal and emergency vehicles. Short-term
-              <a href="https://parkingguelph.aimsparking.com/">
+              allow for snow removal and emergency vehicles. Short-term 
+              {" "}<a href="https://parkingguelph.aimsparking.com/">
                 on-street exemption permits
               </a>{" "}
               are available for residents outside the downtown area.
@@ -288,7 +287,7 @@ export default class Dashboard extends React.Component<Props, State> {
             icon={<FaRegQuestionCircle />}
           >
             <p>
-              If you have technical questions about MyKitchener, please email{" "}
+              If you have technical questions about MyGuelph, please email{" "}
               <a href="mailto:myguelph@guelph.ca">myguelph@guelph.ca</a>.
             </p>
             <p>
