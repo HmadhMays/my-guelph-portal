@@ -5,11 +5,12 @@ import styles from "./Dashboard.scss";
 
 import CircularProgress from "@material-ui/core/CircularProgress";
 
-import { FaRunning, FaRegCalendarAlt, FaCloudSunRain, FaRegNewspaper, FaBriefcase, FaComments, FaExclamation, FaParking, FaRegQuestionCircle} from "react-icons/fa";
+import { FaRunning, FaRegCalendarAlt, FaCloudSunRain, FaRegNewspaper, FaBriefcase, FaComments, FaExclamation, FaParking, FaRegQuestionCircle, FaFileArchive, FaRoad } from "react-icons/fa";
 import { GoMegaphone } from "react-icons/go";
 
 import ColouredCard from "./../ColouredCard";
 
+import Weather from "./../Weather";
 import Footer from "./../Footer";
 
 
@@ -18,7 +19,7 @@ let parser = new Parser();
 export default class Dashboard extends React.Component<Props, State> {
   constructor(props) {
     super(props);
-    this.state = { eventsfeed: [], newsfeed: [], noticefeed:[], seasonalfeed:[], jobfeed: [], engagementfeed: [] };
+    this.state = { eventsfeed: [], newsfeed: [], noticefeed: [], seasonalfeed: [], jobfeed: [], engagementfeed: [] };
   }
 
   async componentDidMount() {
@@ -41,12 +42,13 @@ export default class Dashboard extends React.Component<Props, State> {
     this.setState({ engagementfeed });
   }
 
- 
+
 
   render() {
     return (
       <>
         <div className="row widget-grid col-12">
+          <Weather></Weather>
           <ColouredCard
             color="#478dc9"
             title="Programs and activities"
@@ -84,10 +86,10 @@ export default class Dashboard extends React.Component<Props, State> {
                 </a>
               </>
             ) : (
-              <div className="loading-icon">
-                <CircularProgress size={100} />
-              </div>
-            )}
+                <div className="loading-icon">
+                  <CircularProgress size={100} />
+                </div>
+              )}
           </ColouredCard>
           <ColouredCard
             color="#4bc6b1"
@@ -106,10 +108,10 @@ export default class Dashboard extends React.Component<Props, State> {
                 </a>
               </>
             ) : (
-              <div className="loading-icon">
-                <CircularProgress size={100} />
-              </div>
-            )}
+                <div className="loading-icon">
+                  <CircularProgress size={100} />
+                </div>
+              )}
           </ColouredCard>
 
           <ColouredCard
@@ -125,22 +127,22 @@ export default class Dashboard extends React.Component<Props, State> {
                     <a href="https://guelph.ca/events">View events calendar</a>
                   </>
                 ) : (
-                  <>
-                    {this.state.eventsfeed.items.map((item, i) => (
-                      <div className="listingborder" key={i}>
-                        <a href={item.link}>{item.title}</a>
-                        <p>{item.pubDate}</p>
-                      </div>
-                    ))}
-                    <a href="https://guelph.ca/events">View more events</a>
-                  </>
-                )}
+                    <>
+                      {this.state.eventsfeed.items.map((item, i) => (
+                        <div className="listingborder" key={i}>
+                          <a href={item.link}>{item.title}</a>
+                          <p>{item.pubDate}</p>
+                        </div>
+                      ))}
+                      <a href="https://guelph.ca/events">View more events</a>
+                    </>
+                  )}
               </>
             ) : (
-              <div className="loading-icon">
-                <CircularProgress size={100} />
-              </div>
-            )}
+                <div className="loading-icon">
+                  <CircularProgress size={100} />
+                </div>
+              )}
           </ColouredCard>
           <ColouredCard
             color="#d5861a"
@@ -154,23 +156,23 @@ export default class Dashboard extends React.Component<Props, State> {
                     <p>There is no seasonal information currently available</p>
                   </>
                 ) : (
-                  <>
-                    {this.state.seasonalfeed.items.map((item, i) => (
-                      <div className="listingborder" key={i}>
-                        <a href={item.link}>{item.title}</a>
-                      </div>
-                    ))}
-                    <a href="https://guelph.ca/living/seasonal-information/">
-                      View more seasonal information
+                    <>
+                      {this.state.seasonalfeed.items.map((item, i) => (
+                        <div className="listingborder" key={i}>
+                          <a href={item.link}>{item.title}</a>
+                        </div>
+                      ))}
+                      <a href="https://guelph.ca/living/seasonal-information/">
+                        View more seasonal information
                     </a>
-                  </>
-                )}
+                    </>
+                  )}
               </>
             ) : (
-              <div className="loading-icon">
-                <CircularProgress size={100} />
-              </div>
-            )}
+                <div className="loading-icon">
+                  <CircularProgress size={100} />
+                </div>
+              )}
           </ColouredCard>
           <ColouredCard
             color="#db474c"
@@ -184,26 +186,26 @@ export default class Dashboard extends React.Component<Props, State> {
                     <p>There is no job opportunities currently available</p>
                   </>
                 ) : (
-                  <>
-                    <p>We’re hiring for the following positions:</p>
-                    <ul className="listing-list">
-                      {this.state.jobfeed.items.map((item, i) => (
-                        <li key={i}>
-                          <a href={item.link}>{item.title}</a>
-                        </li>
-                      ))}
-                    </ul>
-                    <a href="https://devguelphca.wpengine.com/employment-careers/careers-jobs/">
-                      View all job opportunities
+                    <>
+                      <p>We’re hiring for the following positions:</p>
+                      <ul className="listing-list">
+                        {this.state.jobfeed.items.map((item, i) => (
+                          <li key={i}>
+                            <a href={item.link}>{item.title}</a>
+                          </li>
+                        ))}
+                      </ul>
+                      <a href="https://devguelphca.wpengine.com/employment-careers/careers-jobs/">
+                        View all job opportunities
                     </a>
-                  </>
-                )}
+                    </>
+                  )}
               </>
             ) : (
-              <div className="loading-icon">
-                <CircularProgress size={100} />
-              </div>
-            )}
+                <div className="loading-icon">
+                  <CircularProgress size={100} />
+                </div>
+              )}
           </ColouredCard>
           <ColouredCard
             color="#e59d29"
@@ -217,31 +219,60 @@ export default class Dashboard extends React.Component<Props, State> {
                     <p>There is no job opportunities currently available</p>
                   </>
                 ) : (
-                  <>
-                    <p>
-                      Have your say! We want to hear from you on these topics:
+                    <>
+                      <p>
+                        Have your say! We want to hear from you on these topics:
                     </p>
-                    <ul className="listing-list">
-                      {this.state.engagementfeed.items.map((item, i) => (
-                        <li key={i}>
-                          <a href={item.link}>{item.title}</a>
-                        </li>
-                      ))}
-                    </ul>
-                    <p>
-                      Follow all engagement opportunities on{" "}
-                      <a href="https://www.haveyoursay.guelph.ca/">
-                        Have Your Say Guelph
+                      <ul className="listing-list">
+                        {this.state.engagementfeed.items.map((item, i) => (
+                          <li key={i}>
+                            <a href={item.link}>{item.title}</a>
+                          </li>
+                        ))}
+                      </ul>
+                      <p>
+                        Follow all engagement opportunities on{" "}
+                        <a href="https://www.haveyoursay.guelph.ca/">
+                          Have Your Say Guelph
                       </a>
-                    </p>
-                  </>
-                )}
+                      </p>
+                    </>
+                  )}
               </>
             ) : (
-              <div className="loading-icon">
-                <CircularProgress size={100} />
-              </div>
-            )}
+                <div className="loading-icon">
+                  <CircularProgress size={100} />
+                </div>
+              )}
+          </ColouredCard>
+          <ColouredCard
+            color="#673ab7"
+            title="Applications"
+            icon={<FaFileArchive />}
+          >
+            You can apply for:
+            <ul>
+              <li>
+                <p>
+                  <a href="https://forms.guelph.ca/ServiceGuelph/Marriage-Licence-Application">Marriage Application Licence</a>.
+            </p>
+              </li>
+              <li>
+                <p>
+                  <a href="https://forms.guelph.ca/ServiceGuelph/Additional-marriage-licence-documents">Additional Marriage Application Licence</a>.
+            </p>
+              </li>
+            </ul>
+          </ColouredCard>
+          <ColouredCard
+            color="#9e9e9e"
+            title="Road closure"
+            icon={<FaRoad />}
+          >
+            <p>
+              Check the latest update on city of Guelph road closure{" "}
+              <a href="https://www.google.com/maps/d/viewer?mid=1j51wycPGHyD_1h8Y88CHfOIVdlw&ll=43.53460614358765%2C-80.23371139999999&z=12">road closure</a>.
+            </p>
           </ColouredCard>
           <ColouredCard
             color="#0d675d"
@@ -276,7 +307,7 @@ export default class Dashboard extends React.Component<Props, State> {
             </p>
             <p>
               On-street parking is restricted from December 1 to April 1 to
-              allow for snow removal and emergency vehicles. Short-term 
+              allow for snow removal and emergency vehicles. Short-term
               {" "}<a href="https://parkingguelph.aimsparking.com/">
                 on-street exemption permits
               </a>{" "}
@@ -299,7 +330,7 @@ export default class Dashboard extends React.Component<Props, State> {
             </p>
           </ColouredCard>
         </div>
-        <Footer/>
+        <Footer />
       </>
     );
   }
